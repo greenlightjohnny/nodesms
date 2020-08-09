@@ -6,7 +6,7 @@ const response = document.querySelector(".response");
 button.addEventListener("click", send, false);
 
 function send() {
-  const number = numberInput.nodeValue.replace(/\D/g, "");
+  const number = numberInput.value.replace(/\D/g, "");
   const text = textInput.value;
 
   fetch("/", {
@@ -16,7 +16,7 @@ function send() {
     },
     body: JSON.stringify({ number: number, text: text }),
   })
-    .then(function (rest) {
+    .then(function (res) {
       console.log(res);
     })
     .catch(function (err) {

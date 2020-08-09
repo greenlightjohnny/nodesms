@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css   "
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+      integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ=="
+      crossorigin="anonymous"
     />
     <title>Node SMS</title>
   </head>
   <body>
     <div class="container">
-      \
       <h2>Send SMS Message</h2>
       <input
         type="tel"
@@ -24,8 +25,11 @@
         type="button"
         id="button"
         value="Send Text"
-        class="button primary"
+        class="button button-primary"
       />
+      <p class="response"></p>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="js/main.js"></script>
     </div>
   </body>
 </html>
