@@ -34,15 +34,16 @@ app.get("/", (req, res) => {
 ///Catch form submit
 app.post("/", (req, res) => {
   //   res.send(req.body);
-  //   console.log(req.body);
+  console.log("$$$$$$", req.body.text);
   const number = req.body.number;
-  const text = req.body.msg;
+  const text = req.body.text;
+  console.log(text, number);
 
   nexmo.message.sendSms(
     "19259679435",
     number,
     text,
-    { type: "unicode" },
+
     (err, responseData) => {
       if (err) {
         console.log(err);

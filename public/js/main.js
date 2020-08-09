@@ -8,16 +8,16 @@ button.addEventListener("click", send, false);
 function send() {
   const number = numberInput.value.replace(/\D/g, "");
   const text = textInput.value;
-
+  console.log("########", text, number);
   fetch("/", {
     method: "post",
-    header: {
+    headers: {
       "Content-type": "application/json",
     },
     body: JSON.stringify({ number: number, text: text }),
   })
     .then(function (res) {
-      console.log(res);
+      console.log("7frommainthen", res);
     })
     .catch(function (err) {
       console.log(err);
