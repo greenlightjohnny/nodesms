@@ -3,12 +3,14 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const Nexmo = require("nexmo");
 const socketio = require("socket.io");
-
+require("dotenv").config();
+const myApiKey = process.env.apiKey;
+const myApiSecret = process.env.apiSecret;
 //Init Nexmo
 const nexmo = new Nexmo(
   {
-    apiKey: "499a4c62",
-    apiSecret: "4ScAlWiktblMFoO7",
+    apiKey: myApiKey,
+    apiSecret: myApiSecret,
   },
   { debug: true }
 );

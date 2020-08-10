@@ -9,7 +9,7 @@
       integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ=="
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="public/main.css" />
+    <link rel="stylesheet" href="main.css" />
     <title>Node SMS</title>
   </head>
   <body>
@@ -19,6 +19,8 @@
         type="tel"
         name="number"
         id="number"
+        value="18312258395"
+        readonly
         placeholder="Enter Phone #..."
       />
       <input type="text" name="msg" id="msg" placeholder="Enter Message" />
@@ -29,6 +31,45 @@
         class="button button-primary"
       />
       <p class="response"></p>
+      <div class="about">
+        <h3>About this</h3>
+        <p>
+          This is a simple Node.js program that will send an SMS to my phone. It
+          is based on a video by Brad Traversy. It uses Node.js, Express,
+          socket.io, and the Nexmo API to send the text. I'm using the free tier
+          of Nexmo, which can only send to numbers you register. With the paid
+          tier, this could be used to send a text to any phone number for about
+          half a cent per message.
+        </p>
+        <p>
+          Socket.io is JavaScript library used for realtime talk between the web
+          client and Node.js server. It mostly uses the WebSocket protocol, and
+          might be overkill for this app now that browsers support it. It is
+          still rather popular though, so I still used it like they did in the
+          original project even though I have read some negative stuff about it
+          for larger projects. It has both a client-side library for the
+          browsers, and a server-side library for the Node.js server. Here it is
+          used to display a paragraph in the browser informing the person when
+          the text message has been successfully sent, which requires a response
+          from the Nexmo API to the Node.js backend. That response is just
+          passed along to the client-side front end and displayed.
+        </p>
+        <p>
+          The Nexmo API is pretty awesome. It can send and receive SMS,
+          text-to-voice, video, voice, and be used for 2FA for security. I
+          checked out their website and they had about 30 open job positions all
+          over the world, so it seems like they are not going anywhere.
+          Installation was super simple, an NPM package. Imported into my app.js
+          file, and used with just a tiny bit of code to get it working. The
+          client client-side Nexmo JavaScript is linked as a script in the
+          index.html file.
+        </p>
+        <p>
+          The original code is from Brad Traversy, who puts out a ton of amazing
+          videos on development. You can see the original code on
+          <a href="https://github.com/bradtraversy/nodetextapp">GitHub</a>
+        </p>
+      </div>
       <script src="/socket.io/socket.io.js"></script>
       <script src="js/main.js"></script>
     </div>
