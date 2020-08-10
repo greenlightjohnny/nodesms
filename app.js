@@ -37,10 +37,9 @@ app.get("/", (req, res) => {
 ///Catch form submit
 app.post("/", (req, res) => {
   //   res.send(req.body);
-  console.log("$$$$$$", req.body.text);
+
   const number = req.body.number;
   const text = req.body.text;
-  console.log(text, number);
 
   nexmo.message.sendSms(
     "19259679435",
@@ -57,7 +56,7 @@ app.post("/", (req, res) => {
           id: responseData.messages[0]["message-id"],
           number: responseData.messages[0]["to"],
         };
-        console.log("####", data);
+
         io.emit("smsStatus", data);
       }
     }

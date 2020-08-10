@@ -10,11 +10,15 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="main.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>Node SMS</title>
   </head>
   <body>
     <div class="container">
-      <h2>Send me an SMS message</h2>
+      <h2>Send me an SMS!</h2>
       <input
         type="tel"
         name="number"
@@ -32,14 +36,14 @@
       />
       <p class="response"></p>
       <div class="about">
-        <h3>About this</h3>
+        <h3>About</h3>
         <p>
           This is a simple Node.js program that will send an SMS to my phone. It
           is based on a video by Brad Traversy. It uses Node.js, Express,
-          socket.io, and the Nexmo API to send the text. I'm using the free tier
-          of Nexmo, which can only send to numbers you register. With the paid
-          tier, this could be used to send a text to any phone number for about
-          half a cent per message.
+          socket.io, Skeleton CSS for basic styling, and the Nexmo API to send
+          the text. I'm using the free tier of Nexmo, which can only send to
+          numbers you register. With the paid tier, this could be used to send a
+          text to any phone number for about half a cent per message.
         </p>
         <p>
           Socket.io is JavaScript library used for realtime talk between the web
@@ -68,6 +72,22 @@
           The original code is from Brad Traversy, who puts out a ton of amazing
           videos on development. You can see the original code on
           <a href="https://github.com/bradtraversy/nodetextapp">GitHub</a>
+        </p>
+        <p>
+          I made some changes to the original, after writing out all the code by
+          hand. First I wanted a working web version, not just running on my
+          local post. I installed the NPM package dotenv, and set my API key and
+          secret inside of it. After that I created a Heroku site, and set a git
+          origin to it. I added my "start" script in the package.json file,
+          directing it to the app.js entry point. For the Heroku environment
+          variables I used the "heroku:config" CLI interface to set them up. I
+          also had to change the app.js port, since it was running on port 3000
+          by default only before, and Heroku would put it on an unknown port.
+          For this I used a line of code saying 'const PORT = process.env.PORT
+          || 5000" which gave Heroku control to set the port, but for my local
+          dev environment would still run on a port if the Heroku env variable
+          was not present (which it would not be). Finally, I made some CSS
+          changes and added a favicon.
         </p>
       </div>
       <script src="/socket.io/socket.io.js"></script>
