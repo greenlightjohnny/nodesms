@@ -6,6 +6,7 @@ const socketio = require("socket.io");
 require("dotenv").config();
 const myApiKey = process.env.apiKey;
 const myApiSecret = process.env.apiSecret;
+console.log("#######", myApiKey);
 //Init Nexmo
 const nexmo = new Nexmo(
   {
@@ -56,6 +57,7 @@ app.post("/", (req, res) => {
           id: responseData.messages[0]["message-id"],
           number: responseData.messages[0]["to"],
         };
+        console.log("####", data);
         io.emit("smsStatus", data);
       }
     }
